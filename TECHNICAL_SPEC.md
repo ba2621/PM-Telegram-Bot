@@ -82,7 +82,7 @@ Required env vars:
 - `TELEGRAM_CHAT_ID`
 
 Optional env vars:
-- `POLY_WS_URL` (default `wss://ws-subscriptions-clob.polymarket.com`)
+- `POLY_WS_URL` (default `wss://ws-subscriptions-clob.polymarket.com/ws/market`)
 - `POLY_WS_CHANNEL` (default `market`)
 - `POLY_API_BASE` (default `https://gamma-api.polymarket.com`)
 - `POLY_CLOB_BASE` (default `https://clob.polymarket.com`)
@@ -127,13 +127,19 @@ Current test coverage includes:
 - Threshold behavior
 - Outcome mapping from `clobTokenIds` + `outcomes`
 
-## 12. Known Limitations
+## 12. Deployment Notes
+- Railway build uses `nixpacks.toml`:
+  - Install: `pip install --no-cache-dir -r requirements.txt`
+  - Start: `PYTHONPATH=src python run.py`
+- `Dockerfile` is included as a fallback deployment path.
+
+## 13. Known Limitations
 - Burst delivery can occur due to market activity patterns and feed batching.
 - Trader identity may be `Unknown` when maker/taker is unavailable.
 - CLOB enrichment fallback may return 404 for some token IDs (non-fatal).
 - No persistent state store for replay-safe deduplication.
 
-## 13. Future Improvements
+## 14. Future Improvements
 - Add durable dedupe store (SQLite/Redis).
 - Improve identity resolution (ENS + cached reverse lookup).
 - Add per-market/category filters.

@@ -41,7 +41,11 @@ This repo includes `nixpacks.toml` for Railway. Build and start commands are:
 - Install: `pip install --no-cache-dir -r requirements.txt`
 - Start: `PYTHONPATH=src python run.py`
 
+Docker fallback is also included via `Dockerfile`.
+
 Set your environment variables in Railway before deploy.
+
+If your bot token appears in logs or screenshots, rotate `TELEGRAM_BOT_TOKEN` immediately and redeploy.
 
 ## Notes
 - The bot uses Polymarket websocket streaming and reconnects automatically.
