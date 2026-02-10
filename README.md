@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# PM-Telegram-Bot
-This is a telegram bot to get alerts for prediction markets
-=======
 # Polymarket Large Trade Telegram Bot
 
 Sends a Telegram message to your configured chat whenever a Polymarket trade exceeds a USD threshold (default: `$100,000`).
