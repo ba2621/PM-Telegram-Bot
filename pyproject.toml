@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polymarket-telegram-bot"
+version = "0.1.0"
+description = "Telegram bot alerts for large Polymarket trades"
+requires-python = ">=3.10"
+dependencies = [
+  "httpx==0.28.1",
+  "websockets==15.0.1",
+  "python-dotenv==1.0.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
