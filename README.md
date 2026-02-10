@@ -2,7 +2,7 @@
 
 Sends a Telegram message to your configured chat whenever a Polymarket trade exceeds a USD threshold (default: `$100,000`).
 
-## Alert contents
+## Alert Contents
 - Market name
 - Buy/sell action
 - USD amount
@@ -35,6 +35,14 @@ Required:
 PYTHONPATH=src python run.py
 ```
 
+## Railway / Runway
+
+This repo includes `nixpacks.toml` for Railway. Build and start commands are:
+- Install: `pip install --no-cache-dir -r requirements.txt`
+- Start: `PYTHONPATH=src python run.py`
+
+Set your environment variables in Railway before deploy.
+
 ## Notes
 - The bot uses Polymarket websocket streaming and reconnects automatically.
 - On startup it auto-discovers active token IDs from Gamma and subscribes to the market WS.
@@ -46,4 +54,3 @@ PYTHONPATH=src python run.py
 ```bash
 PYTHONPATH=src pytest -q
 ```
->>>>>>> eee92bc (Initial commit)
